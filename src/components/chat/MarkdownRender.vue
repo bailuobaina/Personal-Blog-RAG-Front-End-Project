@@ -4,16 +4,34 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { marked } from 'marked'
+import { Marked } from 'marked'
+import { markedHighlight } from 'marked-highlight'
 import DOMPurify from 'dompurify'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
 
 const props = defineProps<{
   content: string
 }>()
 
+const marked = new Marked(
+  markedHighlight({
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+      return hljs.highlight(code, { language }).value
+    }
+  })
+)
+
+marked.setOptions({
+  breaks: true,
+  gfm: true
+})
+
 const renderedContent = computed(() => {
   try {
-    const html = marked.parse(props.content, { async: false }) as string
+    const html = marked.parse(props.content) as string
     return DOMPurify.sanitize(html)
   } catch {
     return props.content
