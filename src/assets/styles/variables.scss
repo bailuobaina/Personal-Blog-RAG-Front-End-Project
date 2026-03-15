@@ -1,0 +1,43 @@
+@use 'sass:color';
+
+$primary-color: #409eff;
+$success-color: #67c23a;
+$warning-color: #e6a23c;
+$danger-color: #f56c6c;
+$info-color: #909399;
+
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #c0c4cc;
+
+$border-base: #dcdfe6;
+$border-light: #e4e7ed;
+$border-lighter: #ebeef5;
+$border-extra-light: #f2f6fc;
+
+$bg-color: #ffffff;
+$bg-page: #f5f7fa;
+$bg-overlay: #ffffff;
+
+$font-size-base: 14px;
+$font-size-small: 13px;
+$font-size-large: 16px;
+$font-size-extra-large: 18px;
+
+$spacing-base: 16px;
+$spacing-small: 8px;
+$spacing-large: 24px;
+$spacing-extra-large: 32px;
+
+$border-radius-base: 4px;
+$border-radius-large: 8px;
+$border-radius-circle: 50%;
+
+$transition-duration: 0.3s;
+$transition-function: ease;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
